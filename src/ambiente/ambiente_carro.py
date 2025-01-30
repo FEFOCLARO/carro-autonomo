@@ -157,16 +157,12 @@ class AmbienteCarro:
         # Limpa a tela
         self.tela.fill(CORES['BRANCO'])
         
-        # Desenha o labirinto
-        espessura_bordas = 4 # Espessura das paredes laterais em pixels
         
         for y in range(self.LINHAS):
             for x in range(self.COLUNAS):
                 if self.labirinto[y, x] == 1:
                     
-                    is_borda = (x == 0 or x == self.COLUNAS-1 or
-                                y == 0 or y == self.LINHAS-1)
-                    if is_borda:
+                 
                         # Desenha parede lateral fina
                         pygame.draw.rect(
                             self.tela,
@@ -175,9 +171,8 @@ class AmbienteCarro:
                              y * self.GRID,
                              self.TAMANHO_PAREDE,
                              self.TAMANHO_PAREDE),
-                            espessura_bordas #apenas o contorno
                             )
-                    else:
+        else:
                         # Desenha parede do labirinto normal (grossa)
                         pygame.draw.rect(
                             self.tela,
@@ -213,7 +208,7 @@ class AmbienteCarro:
         for i, carro in enumerate(self.carros):
             info += f' | Carro {i+1}: {carro["passos"]}'
         texto = fonte.render(info, True, CORES['PRETO'])
-        self.tela.blit(texto, (10, 10))
+        self.tela.blit(texto, (50, 50))
         
         # Atualiza a tela
         pygame.display.flip()

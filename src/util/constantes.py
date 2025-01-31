@@ -10,6 +10,7 @@ CORES = {
     'BRANCO': (255, 255, 255),
     'PRETO': (0, 0, 0),
     'VERDE': (0, 255, 0),
+    'VERMELHO': (255, 0, 0),
     'CINZA': (200, 200, 200),
     'VERDE_CLARO': (150, 255, 150),
     # Cores distintas para cada carro
@@ -23,10 +24,19 @@ CORES = {
     ]
 }
 
+# Parâmetros genéticos
+PARAMS_GENETICOS = {
+    'VELOCIDADE_MIN': 1.0,
+    'VELOCIDADE_MAX': 10.0,
+    'SENSOR_MIN': 0.12,
+    'SENSOR_MAX': 10.0,
+    'TAXA_MUTACAO': 0.5
+}
+
 # Parâmetros de aprendizagem
 PARAMS_APRENDIZAGEM = {
-    'TAXA_APRENDIZAGEM_BASE': 0.1,    # Taxa base de aprendizagem
-    'INCREMENTO_TAXA': 0.02,          # Incremento para cada carro adicional
+    'TAXA_APRENDIZAGEM_BASE': 0.3,    # Taxa base de aprendizagem
+    'INCREMENTO_TAXA': 0.1,          # Incremento para cada carro adicional
     'FATOR_DESCONTO': 0.95,           # Quanto importam as recompensas futuras
     'EPSILON_INICIAL': 1.0,           # Taxa inicial de exploração
     'EPSILON_MINIMO': 0.01,           # Taxa mínima de exploração
